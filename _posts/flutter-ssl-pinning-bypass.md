@@ -1,3 +1,11 @@
+---
+layout: post
+title: Bypassing SSL Pinning in Flutter Based Android Applications
+date: 2024-08-15
+categories: [Android, writeup]
+tags: [Android.SSL Pinning Bypass] 
+---
+
 ### What is SSL pinning?    
 
 SSL Pinning is a client-side technique used to prevent man-in-the-middle attacks by validating server certificates. A list of trusted certificates is embedded into the client application. At runtime, these certificates are compared against the server's certificates. If there is a mismatch, the connection is immediately disrupted, and no user data is transmitted to the server. This ensures that user devices communicate only with trusted servers.
@@ -6,7 +14,7 @@ By preventing man-in-the-middle attacks, SSL Pinning stops attackers from interc
 
 &nbsp;
 
-### Why SSL pinning in flutter Different?
+### Why is SSL pinning different in Flutter?
 
 Flutter applications, which use the Dart programming language, do not utilize the system's CA (Certificate Authority) store. Instead, they use a list of CAs compiled directly into the application.
 

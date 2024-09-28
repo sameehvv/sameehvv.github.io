@@ -1,6 +1,14 @@
+---
+layout: post
+title: Intigriti XSS Challenge 0722 Writeup
+date: 2022-08-21
+categories: [CTF, writeup]
+tags: [CTF.XSS] 
+---
+
+
 ### Introduction:
 The Intigriti 0722 XSS Challenge involves exploiting an SQL injection vulnerability to execute an XSS payload while bypassing Content Security Policy (CSP) restrictions.
-
 
 
 **Challenge URL:** [https://challenge-0722.intigriti.io/](https://challenge-0722.intigriti.io/)

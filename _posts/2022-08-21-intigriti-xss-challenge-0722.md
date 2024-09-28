@@ -3,7 +3,7 @@ layout: post
 title: Intigriti XSS Challenge 0722 Writeup
 date: 2022-08-21
 categories: [CTF, writeup]
-tags: [CTF.XSS] 
+tags: [ctf.xss] 
 ---
 
 

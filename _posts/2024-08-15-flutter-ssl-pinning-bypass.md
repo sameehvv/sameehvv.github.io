@@ -3,7 +3,7 @@ layout: post
 title: Bypassing SSL Pinning in Flutter Based Android Applications
 date: 2024-08-15
 categories: [Android, writeup]
-tags: [Android.SSL Pinning Bypass] 
+tags: [ssl pinning bypass] 
 ---
 
 ### What is SSL pinning?    

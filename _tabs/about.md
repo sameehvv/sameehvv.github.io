@@ -8,10 +8,8 @@ order: 4
   <div class="container">
     <div>
      <p><span class="command">$ whoami</span></p>
-     <p id="scramble-text"> 👋 Hello! <span id="scramble-target">I'm Sameeh</span>,</p>
-      <p>
-        <span id="animated-text"></span>
-      </p>
+     <p id="scramble-text"> 👋 Hello! <span>I'm Sameeh</span>,</p>
+      <p>Pentester | CTF player</p>
     </div>
     <div>
       <p><span class="command">$ ls /certs</span></p>
@@ -80,18 +78,6 @@ order: 4
     text-decoration: underline;
   }
 
-  #animated-text::after {
-    content: '|';
-    display: inline-block;
-    opacity: 1;
-    animation: blink 0.7s infinite;
-  }
-
-@keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-  }
-
 @media (max-width: 768px) {
     .about-section {
       padding: 20px;
@@ -110,77 +96,3 @@ order: 4
     }
   }
 </style>
-
-<script>
-  function scrambleText(element, text, duration) {
-    let scrambled = "";
-    const characters = "!@#$%^&*()_+{}:<>?1234567890abcdefghijklmnopqrstuvwxyz";
-    const textLength = text.length;
-    const intervalTime = duration / textLength;
-    let index = 0;
-
-    const scrambleInterval = setInterval(() => {
-      scrambled = text
-        .split("")
-        .map((char, i) => {
-          if (i <= index) return char;
-          return characters[Math.floor(Math.random() * characters.length)];
-        })
-        .join("");
-
-      element.innerText = scrambled;
-
-      if (index >= textLength) {
-        clearInterval(scrambleInterval);
-      }
-
-      index++;
-    }, intervalTime);
-  }
-
-
-
-  const roles = ["Pentester", "CTF player"];
-  let roleIndex = 0;
-  let charIndex = 0;
-  const typingSpeed = 150;
-  const erasingSpeed = 100;
-  const delayBetween = 1000;
-
-  function typeText() {
-    const target = document.getElementById("animated-text");
-    if (charIndex < roles[roleIndex].length) {
-      target.textContent += roles[roleIndex].charAt(charIndex);
-      charIndex++;
-      setTimeout(typeText, typingSpeed);
-    } else {
-      setTimeout(eraseText, delayBetween);
-    }
-  }
-
-  function eraseText() {
-    const target = document.getElementById("animated-text");
-    if (charIndex > 0) {
-      target.textContent = roles[roleIndex].substring(0, charIndex - 1);
-      charIndex--;
-      setTimeout(eraseText, erasingSpeed);
-    } else {
-      roleIndex = (roleIndex + 1) % roles.length;
-      setTimeout(typeText, typingSpeed);
-    }
-  }
-
-  // Start the typing effect when the page loads
-  document.addEventListener("DOMContentLoaded", function () {
-    setTimeout(typeText, delayBetween);
-  });
-
-    // When the page loads, apply the scramble effect
-  document.addEventListener("DOMContentLoaded", function () {
-    const textElement = document.getElementById("scramble-target");
-    const originalText = "I'm Sameeh";
-    scrambleText(textElement, originalText, 2000); // 2.5 seconds duration
-  });
-
-
-</script>

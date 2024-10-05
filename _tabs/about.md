@@ -31,7 +31,7 @@ order: 4
     <div>
       <p><span class="command">$ cat notes.txt</span></p>
         <p>
-      Find my web application testing notes <a href="path/to/notes.pdf" target="_blank">here</a>.
+      Find my web application testing notes <a href="https://zesty-industry-7a0.notion.site/Web-Pentest-1fbddf00cb2e4571a90433b3713984d3" target="_blank">here</a>.
         </p>
     </div>
   </div>
